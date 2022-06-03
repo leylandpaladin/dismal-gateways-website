@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h1> Релизы </h1>
+
+
+{% for instance in object_list %}
+<p>{{instance.label_number}} - {{instance.artist}} - <a href='{{ instance.get_absolute_url }}'>{{instance.album}}</a></p>
+
+{% endfor %}
+
+
+
+{% endblock %}
