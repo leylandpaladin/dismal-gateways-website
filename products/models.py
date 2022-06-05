@@ -25,6 +25,7 @@ class Album(models.Model):
     description = models.TextField(max_length = 2000)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     label_number = models.CharField(max_length=10,default='DG-')
+    cover_art_img = models.ImageField(null=True, blank=True, upload_to='images/')
 
     def get_absolute_url(self):
         return reverse('album', kwargs={'aid':self.id})

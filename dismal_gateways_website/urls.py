@@ -18,6 +18,8 @@ from django.urls import path
 from pages.views import homepage_view, contact_view, products_view, about_view
 from products.views import album_detail_view, album_list_view
 from redaction.views import article_list_view, article_detail_view
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('',homepage_view, name='home'),
@@ -28,5 +30,12 @@ urlpatterns = [
     path('about/', about_view, name='about'),
     path('redaction/', article_list_view, name='article_list'),
     path('article/<int:aid>/', article_detail_view, name='article_details')
+    
         
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+#static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+

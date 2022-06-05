@@ -1,20 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html>
-	{% load static %}
-
-	<head>
-		<title> DISMAL GATEWAYS </title>
-	</head>
-<body>
-	
-	{% include 'navbar_example.html' %}
-	
-
-	{% block content %}
-	replace me
-	{% endblock %}
-
-</body>
-
+  {% load static %} {% include 'navbar_example.html' %}
+  <head>
+    <title>DISMAL GATEWAYS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/navbar.css'%}"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/release.css'%}"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="{% static 'css/base.css'%}" type="text/css" />
+  </head>
+  <body>
+    {% block content %} replace me {%endblock %}
+  </body>
 </html>
