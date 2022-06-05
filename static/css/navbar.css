@@ -1,0 +1,83 @@
+a {
+  text-decoration: none;
+}
+.navbar {
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #eef0f2;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(228, 228, 228);
+}
+.products-button,
+.about-button,
+.contact-button,
+.reduction-button {
+  height: 40px;
+  width: 66px;
+  background-color: rgb(235, 232, 232);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(192, 186, 186);
+  border-radius: 33px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.15s;
+}
+
+.products-button:hover,
+.about-button:hover,
+.contact-button:hover,
+.reduction-button:hover {
+  opacity: 0.75;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.middle-section {
+  flex: 1;
+  margin-left: 70px;
+  margin-right: 35px;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  flex: 1;
+  height: 36px;
+  padding-left: 10px;
+  font-size: 16px;
+  border: 1px solid rgb(192, 186, 186);
+  border-radius: 2px;
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+  width: 0;
+}
+
+.right-section {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+.cart-logo {
+  height: 20px;
+}

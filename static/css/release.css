@@ -1,0 +1,19 @@
+.page-title {
+  font-size: 9000;
+  font-weight: bold;
+  font-family: Dancing Script;
+}
+.release-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 40px;
+}
+
+.release-sum {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(200, 200, 200);
+  width: 200px;
+  border-radius: 6px;
+}
