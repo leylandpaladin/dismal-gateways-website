@@ -3,10 +3,9 @@ body {
   padding-top: 80px;
   padding-left: 96px;
   padding-right: 24px;
-  background-color: gray;
+  background-color: white;
 }
 
 h1 {
-
-font-family: 'Dancing Script', cursive; 
+  font-family: "Dancing Script", cursive;
 }

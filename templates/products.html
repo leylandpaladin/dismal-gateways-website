@@ -1,7 +1,5 @@
-
-{% extends 'base.html'%}
-{% load static %} {% block content %}
-<h1 class="Page-title">Релизы</h1>
+{% extends 'base.html'%} {% load static %} {% block content %}
+<h1>Релизы</h1>
 <div class="release-grid">
   {% for instance in object_list %}
   <div class="release-sum">
@@ -17,9 +15,9 @@
     <div class="album-logo">
       <img class="logo-preview" src="PICTURE.jpg" alt="" />
     </div>
-	{% if instance.cover_art_img %}
-		<img src={{instance.cover_art_img.url}}>
-	{% endif %}
+    {% if instance.cover_art_img %}
+    <img src="{{instance.cover_art_img.url}}" />
+    {% endif %}
   </div>
   {% endfor %}
 </div>
