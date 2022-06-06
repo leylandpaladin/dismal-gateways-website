@@ -1,20 +1,27 @@
 a {
   text-decoration: none;
+  color: rgb(217, 208, 208);
 }
+
 .navbar {
   height: 55px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   position: fixed;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: #eef0f2;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: rgb(228, 228, 228);
+  background: rgb(68, 82, 154);
+  background: radial-gradient(
+    circle,
+    rgba(68, 82, 154, 1) 0%,
+    rgba(40, 8, 15, 1) 100%
+  );
 }
 .products-button,
 .about-button,
@@ -22,10 +29,10 @@ a {
 .reduction-button {
   height: 40px;
   width: 66px;
-  background-color: rgb(235, 232, 232);
+  background: transparent;
   border-width: 1px;
   border-style: solid;
-  border-color: rgb(192, 186, 186);
+  border-color: rgb(89, 88, 88);
   border-radius: 33px;
   margin-left: 6px;
   margin-right: 6px;
@@ -34,15 +41,15 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 1;
-  transition: opacity 0.15s;
 }
 
 .products-button:hover,
 .about-button:hover,
 .contact-button:hover,
-.reduction-button:hover {
-  opacity: 0.75;
+.reduction-button:hover,
+a:hover {
+  opacity: 0.7;
+  transition: all 0.35s ease-Out;
 }
 
 .left-section {

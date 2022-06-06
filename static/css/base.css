@@ -1,11 +1,24 @@
 body {
   margin: 0;
   padding-top: 80px;
-  padding-left: 96px;
-  padding-right: 24px;
-  background-color: white;
+  padding-left: 50px;
+  padding-right: 50px;
+  background: rgb(68, 82, 154);
+  background: radial-gradient(
+    circle,
+    rgba(68, 82, 154, 1) 0%,
+    rgba(40, 8, 15, 1) 100%
+  );
 }
 
 h1 {
-  font-family: "Dancing Script", cursive;
+  font-size: 36px;
+  font-weight: bold;
+  color: rgb(188, 189, 217);
+}
+
+.img-divide {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
