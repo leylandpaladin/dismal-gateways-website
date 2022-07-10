@@ -14,23 +14,33 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include, re_path
 from pages.views import homepage_view, contact_view, products_view, about_view
-from products.views import album_detail_view, album_list_view
+from products.views import ProductDetailView, ProductsView, AlbumViewAPI 
+
 from redaction.views import article_list_view, article_detail_view
+
 from django.conf import settings
 from django.conf.urls.static import static
+
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'products', AlbumViewAPI, 'album')
+
 
 urlpatterns = [
     path('',homepage_view, name='home'),
     path('contact/', contact_view, name='contact'),
     path('admin/', admin.site.urls),
-    path('products/', album_list_view, name = 'products'),
-    path('album/<int:aid>/', album_detail_view, name='album'),
+    path('products/', ProductsView.as_view(), name = 'products'),
+    path('album/<slug>/', ProductDetailView.as_view(), name='album'),
     path('about/', about_view, name='about'),
     path('redaction/', article_list_view, name='article_list'),
-    path('article/<int:aid>/', article_detail_view, name='article_details')
-    
+    path('article/<int:aid>/', article_detail_view, name='article_details'),
+    path('accounts/', include('allauth.urls')),
+    path('api/', include(router.urls)),
+ 
         
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
