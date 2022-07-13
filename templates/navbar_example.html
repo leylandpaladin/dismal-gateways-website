@@ -1,0 +1,23 @@
+{% load static %}
+<nav class="navbar">
+  <div class="left-section">
+    <button class="products-button">
+      <a href="/products/">Релизы</a>
+    </button>
+    <button class="about-button">
+      <a href="/about/">О нас</a>
+    </button>
+    <button class="contact-button">
+      <a href="/contact/">Контакты</a>
+    </button>
+    <button class="reduction-button">
+      <a href="/redaction/">Редакция</a>
+    </button>
+  </div>
+  <div class="middle-section">
+    <input class="search-bar" type="text" placeholder="Search" />
+  </div>
+  <div class="right-section">
+    <img class="cart-logo" src="{% static '/cart.jpg' %}" alt="" />
+  </div>
+</nav>

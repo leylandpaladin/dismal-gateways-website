@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+  {% load static %} {% include 'navbar_example.html' %}
+  <head>
+    <title>DISMAL GATEWAYS</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'css/navbar.css'%}"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/release.css'%}"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="{% static 'css/base.css'%}" type="text/css" />
+  </head>
+  <body>
+    {% block content %} replace me {%endblock %}
+    <div class="img-divide">
+      <img src="{% static '/tern.png' %}" alt="" />
+    </div>
+  </body>
+</html>

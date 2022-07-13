@@ -1,0 +1,22 @@
+{% extends 'base.html'%} {% block content %} {% load static %}
+<h1>Релизы</h1>
+<div class="release-grid">
+  {% for instance in object_list %}
+  <div class="release-sum">
+    <div class="album-logo">
+      {% if instance.cover_art_img %}
+      <img class="thumbnail" src="{{instance.cover_art_img.url}}" />
+      {% endif %}
+    </div>
+    <div class="release-info">
+      <p class="label-number">{{instance.label_number}}</p>
+      <p class="artist-name">{{instance.artist}}</p>
+      <a class="album-info" href="{{ instance.get_absolute_url }}"
+        >{{instance.album}}</a>
+
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

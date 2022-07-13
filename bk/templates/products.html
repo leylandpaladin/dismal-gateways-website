@@ -1,0 +1,77 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h1> Релизы </h1>
+
+<style>
+
+.release-container {
+
+	display:grid;
+	column-gap: 5px;
+	row-gap: 5px;
+	grid-template-columns: auto auto auto;
+	width: 1500px;
+	justify-content: center;
+	margin: auto;
+
+}
+
+.release-sum {
+
+	border: 2px solid Tomato;
+	position: relative;
+	padding: 70px 0;
+	width: 300px;
+	
+		
+}
+
+.label_number {
+	color: green;
+
+}
+
+.artist {
+
+	color: purple;
+}
+
+.album {
+	color: red;
+}
+
+</style>
+
+<div class='release-container'>
+{% for instance in object_list %}
+
+	<div class = 'release-sum'>
+
+		<div class='label_number'>
+			<p> {{instance.label_number}} </p>
+		</div>
+		
+		<div class='artist'>
+
+		<p> {{instance.artist}} </p>
+		</div>
+
+		<div class = 'album'>
+	<a href='{{ instance.get_absolute_url }}'>{{instance.album}}</a>
+		</div>
+	<p> {{ instance.country }} </p>
+
+	{% if instance.cover_art_img %}i
+	<img src={{instance.cover_art_img.url}}>
+	{% endif %}
+</div>
+
+{% endfor %}
+
+</div>
+
+
+
+
+{% endblock %}
