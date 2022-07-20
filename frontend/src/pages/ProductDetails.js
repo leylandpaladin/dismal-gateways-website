@@ -5,11 +5,11 @@ import { useParams } from "react-router-dom";
 export default function ProductDetails() {
   const [product, setProduct] = useState("");
 
-  const { pk } = useParams();
+  const { slug } = useParams();
 
   const getSingleProduct = async () => {
     const { data } = await axios.get(
-      `http://localhost:8000/api/products/${pk}/`
+      `http://localhost:8000/api/products/${slug}/`
     );
     setProduct(data);
   };

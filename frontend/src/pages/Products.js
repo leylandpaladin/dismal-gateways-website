@@ -17,7 +17,7 @@ export default function Products() {
   return (
     <div className="products--main">
       {products.map((product, index) => (
-        <Link to={`/${product.pk}`}>
+        <Link to={`/${product.slug}`}>
           <div className="product--info">
             <img src={product.cover_art_img} className="product--img"></img>
             <p className="product--artist">{product.artist}</p>

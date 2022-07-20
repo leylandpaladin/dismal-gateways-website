@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
-from .models import Album
-from .serializers import AlbumSerializer
+from .models import Album, UserItem
+from .serializers import AlbumSerializer, UserItemSerializer
 from rest_framework import viewsets
 
 
@@ -34,6 +34,10 @@ class AlbumViewAPI(viewsets.ModelViewSet):
 
     serializer_class = AlbumSerializer
     queryset = Album.objects.all()
+    lookup_field = 'slug'
 
-     
+class UserItemViewAPI(viewsets.ModelViewSet):
+
+    serializer_class = UserItemSerializer
+    queryset = UserItem.objects.all()
 

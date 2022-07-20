@@ -20,8 +20,15 @@ export default function Navbar() {
           <button>
             <Link to="about">About</Link>
           </button>
+
         </li>
-      </ul>
+
+		<li>
+		  <button>
+				<Link to = "cart"> Cart </Link>
+		  </button>
+		</li>
+	  </ul>
     </nav>
   );
 }

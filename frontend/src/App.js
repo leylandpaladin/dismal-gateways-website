@@ -6,6 +6,7 @@ import Products from "./pages/Products";
 import { Route, Routes } from "react-router-dom";
 import About from "./pages/About";
 import ProductDetails from "./pages/ProductDetails";
+import CartPage from "./pages/CartPage";
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
       <div className="content--wrap">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
+          <Route path="/products/" element={<Products />} />
           <Route path="/about" element={<About />} />
-          <Route path="/:pk/" element={<ProductDetails />} />
+          <Route path=":slug/" element={<ProductDetails />} />
+		  <Route path="/cart" element={<CartPage />}/>
         </Routes>
       </div>
       <Footer />

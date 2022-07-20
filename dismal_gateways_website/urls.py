@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from pages.views import homepage_view, contact_view, products_view, about_view
-from products.views import ProductDetailView, ProductsView, AlbumViewAPI 
+from products.views import ProductDetailView, ProductsView, AlbumViewAPI, UserItemViewAPI
 
 from redaction.views import article_list_view, article_detail_view
 
@@ -27,7 +27,7 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r'products', AlbumViewAPI, 'album')
-
+router.register(r'user_items', UserItemViewAPI, 'user_items')
 
 urlpatterns = [
     path('',homepage_view, name='home'),
