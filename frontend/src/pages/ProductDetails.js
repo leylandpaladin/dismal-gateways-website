@@ -9,7 +9,7 @@ export default function ProductDetails() {
 
   const getSingleProduct = async () => {
     const { data } = await axios.get(
-      `http://localhost:8000/api/products/${slug}/`
+      `/api/products/${slug}/`
     );
     setProduct(data);
   };

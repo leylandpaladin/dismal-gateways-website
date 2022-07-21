@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from pages.views import homepage_view, contact_view, products_view, about_view
-from products.views import ProductDetailView, ProductsView, AlbumViewAPI, UserItemViewAPI
+from products.views import ProductDetailView, ProductsView, AlbumViewAPI, MyTokenObtainPairView, UserViewAPI
 
 from redaction.views import article_list_view, article_detail_view
 
@@ -25,9 +25,13 @@ from django.conf.urls.static import static
 
 from rest_framework import routers
 
+from rest_framework_simplejwt.views import TokenObtainPairView
+    
+
 router = routers.DefaultRouter()
 router.register(r'products', AlbumViewAPI, 'album')
-router.register(r'user_items', UserItemViewAPI, 'user_items')
+router.register(r'users', UserViewAPI, 'user')
+
 
 urlpatterns = [
     path('',homepage_view, name='home'),
@@ -40,6 +44,9 @@ urlpatterns = [
     path('article/<int:aid>/', article_detail_view, name='article_details'),
     path('accounts/', include('allauth.urls')),
     path('api/', include(router.urls)),
+    path('api/users/login', MyTokenObtainPairView.as_view(), name = 'token_obtain_pair'),
+    path('api/', include(router.urls)),
+    
  
         
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

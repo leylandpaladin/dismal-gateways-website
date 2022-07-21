@@ -1,17 +1,23 @@
 from rest_framework import serializers
-from .models import Album, UserItem
-
+from .models import *
+from django.contrib.auth.models import User
 
 class AlbumSerializer(serializers.ModelSerializer):
 
     class Meta: 
         model = Album
-        fields = ('pk', 'artist', 'album', 'genre', 'release_date', 'country', 'physical_type', 'description', 'price', 'label_number', 'cover_art_img','stock', 'slug')
+        fields = '__all__'
 
-class UserItemSerializer(serializers.ModelSerializer):
+
+class UserSerializer(serializers.ModelSerializer):
+    name = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
+        model = User
+        fields = ['id', 'username', 'email','name']
 
-        model = UserItem
-        fields = ('item', 'user', 'quantity', 'added')
-
+    def get_name(self, obj):
+        name = obj.first_name
+        if name == '':
+            name = obj.email
+        return name

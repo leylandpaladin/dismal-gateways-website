@@ -17,9 +17,9 @@ PHYSCICAL_TYPES = [(TAPE, 'Tape'),
         ]
 
 class Album(models.Model):
-    artist = models.CharField(max_length= 120)
-    album = models.CharField(max_length= 120)
-    genre = models.CharField(max_length= 40,choices=GENRES,default=DUNGEON_SYNTH)
+    artist = models.CharField(max_length = 120)
+    album = models.CharField(max_length = 120)
+    genre = models.CharField(max_length = 40,choices=GENRES,default=DUNGEON_SYNTH)
     release_date =models.DateTimeField()
     country = models.CharField(max_length= 30 )
     physical_type = models.CharField(max_length = 15, choices=PHYSCICAL_TYPES, default=TAPE)
@@ -38,12 +38,69 @@ class Album(models.Model):
         return f'{self.artist},{self.album}'
 
  
-class UserItem(models.Model):
+class Review(models.Model):
+    
+    product = models.ForeignKey(Album, on_delete=models.SET_NULL, null = True)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null = True)
+    name = models.CharField(max_length=200, null=True, blank=True)
+    favourite_track = models.CharField(max_length=200, null= True, blank = True)
+    comment = models.TextField(max_length=1000, null=True, blank=True)
+    
+    def __str__(self):
 
-    item = models.ForeignKey(Album, on_delete = models.CASCADE)
-    user = models.ForeignKey(User, on_delete = models.CASCADE)
-    quantity = models.PositiveIntegerField(default=1)
-    added = models.DateTimeField(auto_now_add=True)
+        return str(self.user)
+    
 
-    def _str_(self):
-        return self.item.slug
+class Order(models.Model):
+
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null = True)
+    paymentMethod = models.CharField(max_length= 30 )
+    shippingPrice = models.DecimalField(max_digits=6, decimal_places=2) 
+    totalPrice = models.DecimalField(max_digits=6, decimal_places=2)
+    isPaid = models.BooleanField(default=False)
+    paidAt = models.DateTimeField(auto_now_add=False, null=True, blank = True) 
+    isDelivered = models.BooleanField(default=False)
+    deliveredAt = models.DateTimeField(auto_now_add=False, null=True, blank = True) 
+    createdAt = models.DateTimeField(auto_now_add=True, null=True, blank = True) 
+
+    def __str__(self):
+
+        return str(self.createdAt)
+
+class OrderItem(models.Model):
+
+    product = models.ForeignKey(Album, on_delete=models.SET_NULL, null = True)
+    order = models.ForeignKey(Order, on_delete=models.SET_NULL, null = True)
+    name = models.CharField(max_length=200, null=True, blank=True)
+    quantity = models.IntegerField(null=True, blank=True)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    image = models.CharField(max_length = 120)
+
+    def __str__(self):
+
+        return str(self.name)
+
+
+class ShippingAdress(models.Model):
+
+    order = models.OneToOneField(Order, on_delete=models.CASCADE, null=True, blank=True)
+    adress = models.CharField(max_length = 120)
+    city = models.CharField(max_length = 120)
+    zipCode = models.IntegerField(null=True, blank=True)
+    country = models.CharField(max_length = 120)
+    shippingPrice = models.DecimalField(max_digits=6, decimal_places=2)
+
+    def __str__(self):
+
+        return str(self.adress)
+
+
+
+
+
+
+
+
+
+
+
