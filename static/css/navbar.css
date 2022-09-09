@@ -1,0 +1,90 @@
+a {
+  text-decoration: none;
+  color: rgb(217, 208, 208);
+}
+
+.navbar {
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgb(68, 82, 154);
+  background: radial-gradient(
+    circle,
+    rgba(68, 82, 154, 1) 0%,
+    rgba(40, 8, 15, 1) 100%
+  );
+}
+.products-button,
+.about-button,
+.contact-button,
+.reduction-button {
+  height: 40px;
+  width: 66px;
+  background: transparent;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(89, 88, 88);
+  border-radius: 33px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.products-button:hover,
+.about-button:hover,
+.contact-button:hover,
+.reduction-button:hover,
+a:hover {
+  opacity: 0.7;
+  transition: all 0.35s ease-Out;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.middle-section {
+  flex: 1;
+  margin-left: 70px;
+  margin-right: 35px;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  flex: 1;
+  height: 36px;
+  padding-left: 10px;
+  font-size: 16px;
+  border: 1px solid rgb(192, 186, 186);
+  border-radius: 2px;
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+  width: 0;
+}
+
+.right-section {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+.cart-logo {
+  height: 20px;
+}

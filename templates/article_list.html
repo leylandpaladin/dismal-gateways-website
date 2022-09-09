@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h1> Редакция </h1>
+
+
+{% for instance in object_list %}
+<p><a href='{{instance.get_absolute_url}}'</a>{{instance.title}} <p>
+<h5> {{instance.body}} </h5>
+
+{% endfor %}
+
+
+
+{% endblock %}

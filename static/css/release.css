@@ -1,0 +1,76 @@
+.album-logo {
+  position: relative;
+}
+
+.release-info {
+  display: grid;
+}
+
+.album-info {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  text-align: center;
+}
+
+.album-info:hover {
+  text-decoration: underline;
+  color: rgb(188, 189, 217);
+}
+
+.thumbnail {
+  width: 100%;
+}
+
+.release-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 40px;
+}
+
+.release-sum {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 6px;
+  background: rgb(114, 118, 135);
+  background: radial-gradient(
+    circle,
+    rgba(114, 118, 135, 1) 0%,
+    rgba(40, 8, 15, 1) 100%
+  );
+}
+
+.release-sum:hover {
+  background: rgb(195, 200, 227);
+  background: radial-gradient(
+    circle,
+    rgba(195, 200, 227, 1) 0%,
+    rgba(40, 8, 15, 1) 100%
+  );
+}
+
+.label-number {
+  margin-top: 0;
+  font-size: 14px;
+  color: rgb(188, 189, 217);
+  font-weight: bold;
+  line-height: 10px;
+  margin-bottom: 5px;
+  margin-left: 3px;
+}
+
+.artist-name {
+  color: rgb(188, 189, 217);
+  font-size: 18px;
+  text-align: center;
+}
+
+.img-divide {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  margin-top: 30px;
+  margin-bottom: 90%;
+}

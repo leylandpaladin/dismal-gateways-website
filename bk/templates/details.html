@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> Подробнее о альбоме </h1>
+<h1>{{ object.artist }}</h1>
+{% if cover_art_img %}
+<img src={{ object.cover_art_img.url }} >
+{% endif %}
+<h2>{{ object.album }}</h2>
+<h3>{{ object.price}}</h3>
+<h3>{{ object.description }}</h3>
+<h3>{{ object.release_date }}</h3>
+{% endblock %}
