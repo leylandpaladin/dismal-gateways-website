@@ -70,65 +70,34 @@ nav {
 
 /* Main page styling */
 
-.wrapper--main {
-  height: 100vh;
-}
-
-.container img {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
+.background--img {
+  max-width: 100%;
+  height: auto;
   z-index: -1;
 }
 
-.main--title {
+.logo--img {
   position: absolute;
-  top: 40%;
+  top: 50px;
   left: 50%;
-  font-size: 2rem;
-  transform: translate(-50%, -40%);
+  width: 450px;
+  height: 500px;
 }
 
-.about {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.about--text {
+.spear2--img {
   position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -40%);
-  font-size: 20px;
-  font-weight: bold;
-  text-shadow: 0 0 5px white;
-  width: 500px;
-  border: 3px solid white;
-  border-radius: 4px;
-  box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.36);
+  top: 50px;
+  left: 40%;
+  width: 450px;
+  height: 500px;
 }
 
-.water--img {
-  height: 100vh;
-  width: 100%;
-}
-
-.divider {
-  height: 180px;
-  background: black;
-  border: 2px solid #212529;
-}
-
-.divider--text {
+.spear1--img {
   position: absolute;
-  top: 115%;
-  left: 50%;
-  font-size: 2rem;
-  transform: translate(-50%, -115%);
-  color: white;
+  top: 50px;
+  left: 60%;
+  width: 450px;
+  height: 500px;
 }
 
 /* Products page styling */
